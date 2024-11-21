@@ -29,11 +29,12 @@
             <version>7.5.0</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.seleniumhq.selenium</groupId>-->
-<!--            <artifactId>selenium-devtools-v120</artifactId>-->
-<!--            <version>4.16.1</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v129</artifactId>
+            <version>4.26.0</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
