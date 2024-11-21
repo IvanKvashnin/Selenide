@@ -53,9 +53,9 @@ public class HarNoProxy {
             System.out.println(url + " - Status: " + status);
         });
 
-        // Дождитесь завершения всех запросов (можно использовать более сложную логику)
+
         try {
-            Thread.sleep(1000); // Замените на более надежный метод, если необходимо
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             log.error("Thread interrupted", e);
@@ -68,7 +68,7 @@ public class HarNoProxy {
         har.put("log", new HashMap<String, Object>() {{
             put("version", "1.2");
             put("creator", new HashMap<String, String>() {{
-                put("name", "Selenium");
+                put("name", "Vlad");
                 put("version", "4.0");
             }});
             put("entries", entries);
