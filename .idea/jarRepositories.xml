@@ -2,9 +2,19 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="membrana-artifactory-releases" />
+      <option name="name" value="releases-neolink-maven-local" />
+      <option name="url" value="https://artifactory.mts.ru/artifactory/releases-neolink-maven-local" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="local-maven-repo" />
+      <option name="name" value="local-maven-repo" />
+      <option name="url" value="https://nexus.services.mts.ru/repository/maven-public" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -15,6 +25,16 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="membrana-artifactory-snapshots" />
+      <option name="name" value="snapshots-neolink-maven-local" />
+      <option name="url" value="https://artifactory.mts.ru/artifactory/snapshots-neolink-maven-local" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://nexus.services.mts.ru/repository/maven-public" />
     </remote-repository>
   </component>
 </project>
