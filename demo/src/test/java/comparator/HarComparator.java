@@ -45,13 +45,13 @@ public class HarComparator {
         JSONObject newHar2 = new JSONObject(newHarContent2);
         JSONObject newHar3 = new JSONObject(newHarContent3);
 
-        Map<String, List<String>> blockedUrls = compareHars(originalHar, newHar1, newHar2, newHar3);
+        Map<String, Object> result = compareHars(originalHar, newHar1, newHar2, newHar3);
 
-        generateHtmlReport(blockedUrls, "report.html");
+        generateHtmlReport(result, "report.html");
     }
 
     @SneakyThrows
-    public static Map<String, List<String>> compareHars(JSONObject originalHar, JSONObject newHar1, JSONObject newHar2, JSONObject newHar3) {
+    public static Map<String, Object> compareHars(JSONObject originalHar, JSONObject newHar1, JSONObject newHar2, JSONObject newHar3) {
         Map<String, List<String>> blockedUrls = new HashMap<>();
         blockedUrls.put("newHar1", new ArrayList<>());
         blockedUrls.put("newHar2", new ArrayList<>());
@@ -106,9 +106,15 @@ public class HarComparator {
             }
         }
 
-        return sortedBlockedUrls;
-    }
+        // Находим блокированные ссылки из newHar2 и newHar3, которых нет в newHar1
+        List<String> blockedUrlsNotInNewHar1 = getBlockedUrlsNotInNewHar1(sortedBlockedUrls);
 
+        Map<String, Object> result = new HashMap<>();
+        result.put("blockedUrls", sortedBlockedUrls);
+        result.put("blockedUrlsNotInNewHar1", blockedUrlsNotInNewHar1);
+
+        return result;
+    }
 
     @SneakyThrows
     private static Map<String, JSONObject> getEntriesMap(JSONArray entries) {
@@ -122,7 +128,26 @@ public class HarComparator {
         return entriesMap;
     }
 
-    public static void generateHtmlReport(Map<String, List<String>> blockedUrls, String outputFile) throws IOException, TemplateException {
+    private static List<String> getBlockedUrlsNotInNewHar1(Map<String, List<String>> sortedBlockedUrls) {
+        List<String> blockedUrlsNotInNewHar1 = new ArrayList<>();
+        Set<String> newHar1Urls = new HashSet<>(sortedBlockedUrls.get("newHar1"));
+
+        for (String url : sortedBlockedUrls.get("newHar2")) {
+            if (!newHar1Urls.contains(url)) {
+                blockedUrlsNotInNewHar1.add(url);
+            }
+        }
+
+        for (String url : sortedBlockedUrls.get("newHar3")) {
+            if (!newHar1Urls.contains(url)) {
+                blockedUrlsNotInNewHar1.add(url);
+            }
+        }
+
+        return blockedUrlsNotInNewHar1;
+    }
+
+    public static void generateHtmlReport(Map<String, Object> data, String outputFile) throws IOException, TemplateException {
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_31);
         cfg.setDirectoryForTemplateLoading(new File("/Users/kuvshinova/IdeaProjects/Selenide/demo/src/test/java/templates"));
         cfg.setDefaultEncoding("UTF-8");
@@ -132,6 +157,9 @@ public class HarComparator {
 
         Template template = cfg.getTemplate("report.ftl");
 
+        Map<String, List<String>> blockedUrls = (Map<String, List<String>>) data.get("blockedUrls");
+        List<String> blockedUrlsNotInNewHar1 = (List<String>) data.get("blockedUrlsNotInNewHar1");
+
         Map<String, Object> dataModel = new HashMap<>();
         dataModel.put("blockedUrlsNewHar1", blockedUrls.get("newHar1"));
         dataModel.put("blockedUrlsNewHar2", blockedUrls.get("newHar2"));
@@ -139,6 +167,7 @@ public class HarComparator {
         dataModel.put("blockedUrlsCountNewHar1", blockedUrls.get("newHar1").size());
         dataModel.put("blockedUrlsCountNewHar2", blockedUrls.get("newHar2").size());
         dataModel.put("blockedUrlsCountNewHar3", blockedUrls.get("newHar3").size());
+        dataModel.put("blockedUrlsNotInNewHar1", blockedUrlsNotInNewHar1);
 
         try (FileWriter writer = new FileWriter(new File(outputFile))) {
             template.process(dataModel, writer);

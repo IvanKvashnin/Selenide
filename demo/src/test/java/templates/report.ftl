@@ -30,6 +30,19 @@
 </head>
 <body>
 <h1>HAR Comparison Report</h1>
+
+<h2>Blocked URLs not in New HAR 1 (Total: ${blockedUrlsNotInNewHar1?size})</h2>
+<table>
+    <tr>
+        <th>Blocked URLs</th>
+    </tr>
+    <#list blockedUrlsNotInNewHar1 as url>
+        <tr>
+            <td class="truncate">${url}</td>
+        </tr>
+    </#list>
+</table>
+
 <div class="table-container">
     <div>
         <h2>Blocked URLs in MITM (Total: ${blockedUrlsCountNewHar1})</h2>
