@@ -24,7 +24,7 @@ import java.util.Set;
 public class HarComparator {
 
     @SneakyThrows
-    public static void main(String[] args) {
+    public static void main(String[] args) { //пути для харфайлов, из которых мы берем ссылки
         File originalHarFile = new File("/Users/kuvshinova/IdeaProjects/Selenide/demo/src/test/java/comparator/original.har");
         File newHarFile1 = new File("/Users/kuvshinova/IdeaProjects/Selenide/demo/src/test/java/comparator/new1.har");
         File newHarFile2 = new File("/Users/kuvshinova/IdeaProjects/Selenide/demo/src/test/java/comparator/new2.har");

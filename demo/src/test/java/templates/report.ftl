@@ -31,7 +31,7 @@
 <body>
 <h1>HAR Comparison Report</h1>
 
-<h2>Blocked URLs not in New HAR 1 (Total: ${blockedUrlsNotInNewHar1?size})</h2>
+<h2>Blocked URLs NOT in MITM (Total: ${blockedUrlsNotInNewHar1?size})</h2>
 <table>
     <tr>
         <th>Blocked URLs</th>
