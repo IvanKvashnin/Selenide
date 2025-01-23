@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1441a69-e6cc-4496-85fb-d79854ae8b6a" name="Changes" comment="23.12.2024 - update comparator HAR with REPORT">
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/AdBlockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/BrowserMobProxyServerHarTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/HarNoProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/SelenideHarProxyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/SelenideNetworkLogsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/SeleniumDevToolsTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/test/java/comparator/HarComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/comparator/HarComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/templates/report.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/templates/report.ftl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/IvanKvashnin/Selenide.git&quot;,
-    &quot;accountId&quot;: &quot;45923574-be1b-450e-9756-ae2497b7c19e&quot;
+    &quot;accountId&quot;: &quot;56789bfe-6b74-4c1d-ad31-eb6b66efe1ea&quot;
   }
 }</component>
   <component name="MarkdownSettingsMigration">
@@ -56,30 +63,47 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.AdBlockTest.executor": "Run",
     "Application.HarComparator.executor": "Run",
     "JUnit.HarNoProxy.executor": "Run",
     "JUnit.HarNoProxy.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kovsh\IdeaProjects\Selenide\demo\src\test\java\com\example\demo" />
       <recent name="$PROJECT_DIR$/demo/src/test/java/comparator" />
       <recent name="$PROJECT_DIR$/demo/src/test/java/templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HarComparator">
+  <component name="RunManager" selected="Application.AdBlockTest">
+    <configuration name="AdBlockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.AdBlockTest" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HarComparator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comparator.HarComparator" />
       <module name="demo" />
@@ -118,6 +142,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AdBlockTest" />
         <item itemvalue="Application.HarComparator" />
         <item itemvalue="JUnit.HarNoProxy.test" />
       </list>
